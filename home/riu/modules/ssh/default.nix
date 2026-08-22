@@ -7,10 +7,13 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    settings."*" = {
-      proxyJump = "bastion";
-      identityFile = "/run/secrets/ssh_private_key";
-      identitiesOnly = true;
+    settings = {
+      bastion.proxyJump = "none";
+      "*" = {
+        proxyJump = "bastion";
+        identityFile = "/run/secrets/ssh_private_key";
+        identitiesOnly = true;
+      };
     };
   };
 }
