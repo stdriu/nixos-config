@@ -1,0 +1,8 @@
+hl.on("hyprland.start", function()
+  --hl.exec_cmd("sh -c 'kanshi > /tmp/kanshi.log 2>&1'")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("pywalfox start")
+  hl.exec_cmd("qs")
+  hl.exec_cmd("rfkill unblock all")
+  hl.exec_cmd("sleep 1 && waybar")
+end)
